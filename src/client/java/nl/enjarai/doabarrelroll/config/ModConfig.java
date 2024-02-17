@@ -76,7 +76,7 @@ public class ModConfig {
 
         Thrust thrust = new Thrust();
         static class Thrust {
-            boolean enable_thrust = false;
+            boolean enable_thrust = true;
             double max_thrust = 2.0;
             double thrust_acceleration = 0.1;
             boolean thrust_particles = true;
@@ -163,19 +163,7 @@ public class ModConfig {
     }// = false;
 
     public boolean getEnableThrust() {
-        if (general.thrust.enable_thrust) {
-            ClientPlayerEntity player;
-            if (DoABarrelRollClient.isConnectedToRealms() &&
-                    (player = MinecraftClient.getInstance().player) != null && player.hasPermissionLevel(2)) {
-                return true;
-            }
-
-            return DoABarrelRollClient.HANDSHAKE_CLIENT.getConfig()
-                    .map(LimitedModConfigServer::allowThrusting)
-                    .orElse(false);
-        }
-
-        return false;
+        return general.thrust.enable_thrust;
     }
 
     public boolean getEnableThrustClient() {

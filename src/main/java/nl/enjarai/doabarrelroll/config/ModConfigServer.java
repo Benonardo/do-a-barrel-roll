@@ -15,7 +15,7 @@ public record ModConfigServer(boolean allowThrusting,
                               int installedTimeout,
                               KineticDamage kineticDamage) implements SyncableConfig<ModConfigServer, LimitedModConfigServer>, LimitedModConfigServer, ValidatableConfig {
     public static final ModConfigServer DEFAULT = new ModConfigServer(
-            false, false, false, 40, KineticDamage.VANILLA);
+            true, false, false, 40, KineticDamage.VANILLA);
 
     public static final Codec<ModConfigServer> CODEC = RecordCodecBuilder.create(instance -> instance.group(
             Codec.BOOL.optionalFieldOf("allowThrusting", DEFAULT.allowThrusting()).forGetter(ModConfigServer::allowThrusting),
@@ -32,7 +32,7 @@ public record ModConfigServer(boolean allowThrusting,
 
     @Override
     public Text getSyncTimeoutMessage() {
-        return Text.of("Please install Do a Barrel Roll 2.4.0 or later to play on this server.");
+        return Text.of("Please install Do a Hacked Roll 2.4.0 or later to play on this server.");
     }
 
     @Override

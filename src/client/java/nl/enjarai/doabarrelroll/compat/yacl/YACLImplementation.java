@@ -37,7 +37,7 @@ public class YACLImplementation {
                 (player = MinecraftClient.getInstance().player) != null && player.hasPermissionLevel(2);
         var serverConfig = DoABarrelRollClient.HANDSHAKE_CLIENT.getConfig();
 
-        var thrustingAllowed = new Dependable(serverConfig.map(LimitedModConfigServer::allowThrusting).orElse(!inWorld || onRealms));
+        var thrustingAllowed = new Dependable(true);
         var allowDisabled = new Dependable(!serverConfig.map(LimitedModConfigServer::forceEnabled).orElse(false));
 
         var builder = YetAnotherConfigLib.createBuilder()
@@ -102,14 +102,13 @@ public class YACLImplementation {
                                 .build())
                         .group(OptionGroup.createBuilder()
                                 .name(getText("thrust"))
-                                .collapsed(true)
                                 .option(thrustingAllowed.add(getBooleanOption("thrust", "enable_thrust", true, false)
                                         .binding(false, () -> ModConfig.INSTANCE.getEnableThrustClient(), value -> ModConfig.INSTANCE.setEnableThrust(value))))
                                 .option(thrustingAllowed.add(getOption(Double.class, "thrust", "max_thrust", true, false)
-                                        .controller(option -> getDoubleSlider(option, 0.1, 10.0, 0.1))
+                                        .controller(option -> getDoubleSlider(option, 0.1, DoABarrelRollClient.max, 0.1))
                                         .binding(2.0, () -> ModConfig.INSTANCE.getMaxThrust(), value -> ModConfig.INSTANCE.setMaxThrust(value))))
                                 .option(thrustingAllowed.add(getOption(Double.class, "thrust", "thrust_acceleration", true, false)
-                                        .controller(option -> getDoubleSlider(option, 0.1, 1.0, 0.1))
+                                        .controller(option -> getDoubleSlider(option, 0.1, DoABarrelRollClient.accel, 0.1))
                                         .binding(0.1, () -> ModConfig.INSTANCE.getThrustAcceleration(), value -> ModConfig.INSTANCE.setThrustAcceleration(value))))
                                 .option(thrustingAllowed.add(getBooleanOption("thrust", "thrust_particles", false, false)
                                         .binding(true, () -> ModConfig.INSTANCE.getThrustParticles(), value -> ModConfig.INSTANCE.setThrustParticles(value))))
@@ -274,7 +273,7 @@ public class YACLImplementation {
 
         Consumer<LimitedModConfigServer> configListener = config -> {
             // Update options that have dependent availability.
-            thrustingAllowed.set(config.allowThrusting());
+//            thrustingAllowed.set(config.allowThrusting());
             allowDisabled.set(!config.forceEnabled());
         };
 

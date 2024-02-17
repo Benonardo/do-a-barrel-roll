@@ -137,7 +137,6 @@ public class ModKeybindings {
             }
         }
         while (TOGGLE_THRUST.wasPressed()) {
-            if (DoABarrelRollClient.HANDSHAKE_CLIENT.getConfig().map(LimitedModConfigServer::allowThrusting).orElse(false)) {
                 ModConfig.INSTANCE.setEnableThrust(!ModConfig.INSTANCE.getEnableThrust());
                 ModConfig.INSTANCE.save();
 
@@ -150,14 +149,6 @@ public class ModKeybindings {
                             true
                     );
                 }
-            } else {
-                if (client.player != null) {
-                    client.player.sendMessage(
-                            Text.translatable("key.do_a_barrel_roll.toggle_thrust.disallowed"),
-                            true
-                    );
-                }
-            }
         }
         while (OPEN_CONFIG.wasPressed()) {
             client.setScreen(ModConfigScreen.create(client.currentScreen));

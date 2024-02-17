@@ -76,8 +76,6 @@ config.do_a_barrel_roll:
     enable_thrust.description: >
       Enables you to use the forward and back keys (W and S by default) 
       to infinitely accelerate and decelerate respectively.
-      
-      §4This feature is disabled on any server that does not explicitly allow it.
     max_thrust: Max Thrusting Speed
     max_thrust.description: >
       The maximum speed that can be reached by thrusting. 

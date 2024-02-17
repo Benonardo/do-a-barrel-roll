@@ -36,6 +36,8 @@ public class DoABarrelRollClient {
     public static final SmoothUtil ROLL_SMOOTHER = new SmoothUtil();
     public static final RollGroup FALL_FLYING_GROUP = RollGroup.of(DoABarrelRoll.id("fall_flying"));
     public static double throttle = 0;
+    public static final double max = 200.0;
+    public static final double accel = 5.0;
 
     public static void init() {
         FALL_FLYING_GROUP.trueIf(DoABarrelRollClient::isFallFlying);

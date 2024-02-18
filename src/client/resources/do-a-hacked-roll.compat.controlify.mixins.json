@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "nl.enjarai.doahackedroll.compat.controlify.mixin",
+  "plugin": "nl.enjarai.doahackedroll.compat.controlify.ControlifyPlugin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "InGameInputHandlerMixin"
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -9,12 +9,12 @@ version = project.mod_version
 group = project.maven_group
 
 loom {
-    accessWidenerPath = file("src/main/resources/do-a-barrel-roll.accesswidener")
+    accessWidenerPath = file("src/main/resources/do-a-hacked-roll.accesswidener")
 
     splitEnvironmentSourceSets()
 
     mods {
-        "do_a_barrel_roll" {
+        "do_a_hacked_roll" {
             sourceSet sourceSets.main
             sourceSet sourceSets.client
         }

@@ -1,21 +1,20 @@
 {
 	"schemaVersion": 1,
-	"id": "do_a_barrel_roll",
+	"id": "do_a_hacked_roll",
 	"version": "${version}",
 	
-	"name": "Do a Barrel Roll",
-	"description": "Microsoft flight simulator for Minecraft elytras.",
+	"name": "Do a Hacked Roll",
+	"description": "Best elytrafly client out there",
 	"authors": [
-		"enjarai"
+		"Entropy159"
 	],
 	"contact": {
-		"homepage": "https://enjarai.dev",
-		"sources": "https://github.com/enjarai/do-a-barrel-roll",
-		"issues": "https://github.com/enjarai/do-a-barrel-roll/issues"
+		"sources": "https://github.com/Entropy159/do-a-hacked-roll",
+		"issues": "https://github.com/Entropy159/do-a-hacked-roll/issues"
 	},
 	
 	"license": "GPL-3.0",
-	"icon": "assets/do_a_barrel_roll/icon.png",
+	"icon": "assets/do_a_hacked_roll/icon.png",
 
 	"entrypoints": {
 		"client": [
@@ -28,7 +27,7 @@
 			"nl.enjarai.doabarrelroll.compat.modmenu.ModMenuIntegration"
 		],
 		"cicada": [
-			"nl.enjarai.doabarrelroll.DoABarrelRoll"
+			"nl.enjarai.doabarrelroll.DoAHackedRoll"
 		],
 		"controlify": [
 			"nl.enjarai.doabarrelroll.compat.controlify.ControlifyCompat"
@@ -40,7 +39,7 @@
 	
 	"environment": "*",
 	"mixins": [
-		"do-a-barrel-roll.mixins.json",
+		"do-a-hacked-roll.mixins.json",
 		{
 			"config": "do-a-barrel-roll.client.mixins.json",
 			"environment": "client"
@@ -54,7 +53,7 @@
 			"environment": "client"
 		}
 	],
-	"accessWidener": "do-a-barrel-roll.accesswidener",
+	"accessWidener": "do-a-hacked-roll.accesswidener",
 
 	"suggests": {
 		"yet_another_config_lib_v3": ">=3.1.0"
@@ -67,17 +66,5 @@
 	},
 	"breaks": {
 		"optifabric": "*"
-	},
-
-	"custom": {
-		"modmenu": {
-			"links": {
-				"modmenu.discord": "https://discord.gg/WcYsDDQtyR"
-			}
-		},
-		"projects": {
-			"modrinth": "6FtRfnLg",
-			"curseforge": 663658
-		}
 	}
 }

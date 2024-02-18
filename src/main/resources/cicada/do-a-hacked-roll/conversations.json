@@ -1,0 +1,52 @@
+{
+  "mod_id": "do_a_hacked_roll",
+
+  "conversations": {
+    "cicada:greetings": {
+      "lines": [
+        {
+          "order": 20,
+          "text": "I'm here, ready to thrust!"
+        },
+        {
+          "condition": {
+            "type": "cicada:mod_loaded",
+            "mod_id": "showmeyourskin"
+          },
+          "order": 22,
+          "text": "It's not a figure of speech, I'm actually about to start intensely vibrating."
+        }
+      ]
+    },
+    "cicada:good_old_days": {
+      "lines": [
+        {
+          "order": 10,
+          "text": "I hope we don't do something like that. It was cringe."
+        }
+      ]
+    },
+    "do_a_hacked_roll:cringeness": {
+      "priority": {
+        "priority": 100
+      },
+      "lines": [
+        {
+          "order": 0,
+          "text": "Why play Do A Barrel Roll when you have Do A Hacked Roll???"
+        }
+      ]
+    },
+    "do_a_hacked_roll:rolling_down_in_the_deep": {
+      "priority": {
+        "priority": 50
+      },
+      "lines": [
+        {
+          "order": 0,
+          "text": "Hope the swimming version also gets thrusting."
+        }
+      ]
+    }
+  }
+}

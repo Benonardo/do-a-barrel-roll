@@ -1,0 +1,312 @@
+config.do_a_hacked_roll:
+  title: §lDo a Hacked Roll
+  general:
+    .: General
+    mod_enabled: Mod Enabled
+    mod_enabled.description: > 
+      Enables or disables the mod entirely. 
+      Can also be toggled using %1$s ingame.
+  controls:
+    .: Controls
+    switch_roll_and_yaw: Switch Roll and Yaw
+    switch_roll_and_yaw.description: >
+      Switch the roll and yaw axis while using a mouse to be more in line with vanilla movement. 
+      This is not recommended for the best experience™, but might make flying easier for some people.
+    momentum_based_mouse: Use Momentum Based Mouse
+    momentum_based_mouse.description: > 
+      Makes it easier to make continuous movements with the mouse, 
+      Though it can take some getting used to.
+    show_momentum_widget: Show Momentum Mouse Widget
+    show_momentum_widget.description: > 
+      Turn the crosshair into a helpful widget when using the momentum based mouse.
+      The length of the line indicates the amount of turning power applied in a given direction.
+    momentum_mouse_deadzone: Momentum Mouse Deadzone
+    momentum_mouse_deadzone.description: >
+      Specify a deadzone when using the momentum based mouse. 
+      This can make it easier to fly straight, but higher values will make subtle adjustments more difficult.
+    activation_behaviour:
+      .: Activation Behaviour
+      vanilla: Vanilla
+      triple_jump: Triple Jump
+      hybrid: Hybrid
+      hybrid_toggle: Hybrid Toggle
+      description:
+        .: |+
+          Configures how the Elytra is activated.
+        
+
+        vanilla: >
+          §lVanilla§r: Same as vanilla; jump once while off the ground.
+        triple_jump: >
+          §lTriple Jump§r: Requires you to jump twice while off the ground instead of once. 
+          Can be helpful in preventing your elytra from activating while sprint jumping.
+        hybrid: >
+          §lHybrid§r: Jumping once while off the ground activates standard vanilla flight, 
+          jumping again after that enables the mod and unlocks the roll axis. Takes some getting used to, 
+          but can be helpful when taking off in confined spaces.
+        hybrid_toggle: >
+          §lHybrid Toggle§r: Same as Hybrid mode, but jumping toggles the mod and roll axis instead of just 
+          enabling it once, essentially letting you switch the mod on and off on the fly. (pun intended)
+    invert_pitch: Invert Pitch
+    invert_pitch.description: >
+      Inverts the pitch axis while flying with a mouse.
+    disable_when_submerged: Disable When Submerged
+    disable_when_submerged.description: >
+      Disables the mod while you are underwater. 
+      It is recommended to keep this enabled to prevent loss of control while swimming.
+  hud:
+    .: HUD
+    show_horizon: Show Horizon Widget
+    show_horizon.description: Show a simple artificial horizon widget around your crosshair.
+  banking:
+    .: Flight Options
+    enable_banking: Enable Banking
+    enable_banking.description: > 
+      Adds a slight continuous yaw and pitch to the camera based on your current roll.
+      Creates a more realistic, plane-like feeling while flying, 
+      allowing you to make turns without having to do full 90 degree rolls.
+    banking_strength: Banking Strength
+    simulate_control_surface_efficacy: Simulate Control Surface Efficacy
+    simulate_control_surface_efficacy.description: >
+      Makes... an attempt to simulate the variable authority of different control surfaces based on your current angle of attack.
+      This is experimental and subject to change in the future, but might improve your flight experience.
+  thrust:
+    .: Thrusting Options
+    enable_thrust: Enable Thrusting
+    enable_thrust.description: >
+      Enables you to use the forward and back keys (W and S by default) 
+      to infinitely accelerate and decelerate respectively.
+    max_thrust: Max Thrusting Speed
+    max_thrust.description: >
+      The maximum speed that can be reached by thrusting. 
+      Setting this to anything above 2-3 might cause
+      problems with chunks not loading fast enough.
+    thrust_acceleration: Thrusting Acceleration
+    thrust_acceleration.description: >
+      The acceleration of thrusting. 
+      Higher values will make it easier to reach max speed.
+    thrust_particles: Show Thrusting Particles
+  misc:
+    .: Miscellaneous
+    enable_easter_eggs: Enable Easter Eggs
+  sensitivity: Sensitivity
+  smoothing:
+    .: Smoothing
+    smoothing_enabled: Enable Smoothing
+    smoothing_pitch: Pitch
+    smoothing_yaw: Yaw
+    smoothing_roll: Roll
+  desktop:
+    .: Mouse and Keyboard Sensitivity
+    pitch: Pitch
+    yaw: Yaw
+    roll: Roll
+  controller:
+    .: Controller Sensitivity
+    description: Only applicable when Controlify is installed.
+    pitch: Pitch
+    yaw: Yaw
+    roll: Roll
+  server:
+    .: Server
+    description: §lThese settings apply server-wide and can only be changed by operators.
+    force_enabled: Force Mod Enabled
+    force_enabled.description: >
+      Forces the mod to be enabled for all players on the server. 
+      This will disable client-side toggling and some activation behaviours.
+    force_installed: Force Mod Installed
+    force_installed.description: >
+      Forces the mod to be installed for all players on the server. 
+      This will kick any players that don't have the mod loaded.
+    installed_timeout: Installed Check Timeout
+    installed_timeout.description: >
+      The amount of time in seconds that the server will 
+      wait for a client to respond to the handshake before kicking them.
+      §lIncrease this if players with bad connections are getting kicked even though they have the mod installed.
+  gameplay:
+    .: Gameplay
+    allow_thrusting: Allow Thrusting
+    allow_thrusting.description: >
+      Allows players to use the forward and back keys (W and S by default) 
+      to infinitely accelerate and decelerate respectively.
+    kinetic_damage:
+      .: Kinetic Damage Type
+      vanilla: Vanilla
+      high_speed: High Speed
+      none: None
+      instant_kill: Insta-kill
+      description:
+        .: |+
+          Configures how the Elytra is activated.
+
+
+        vanilla: >
+          §lVanilla§r: Same as vanilla.
+        high_speed: >
+          §lHigh Speed§r: Only applies kinetic damage at significantly increased speed.
+        none: >
+          §lNone§r: Disables kinetic damage entirely.
+        instant_kill: >
+          §lInsta-kill§r: Instantly kills the player when they hit a wall.
+  advanced:
+    .: Advanced
+    description: §lThese settings allow you to modify certain calculations used for flight, and are recommended for advanced users only.
+  banking_math:
+    .: Banking Calculations
+    banking_x_formula: Banking X Function
+    banking_x_formula.description: |
+      §7This expression is used to calculate the amount of absolute yaw to apply when banking is enabled.
+      By default, this is based on the player's current pitch and roll, and the configured banking strength.
+      
+      Note: Absolute yaw in this case means the yaw that is applied as if the player's roll were zero.
+      
+      Additional variables:
+        - §f$§abanking_strength§7: The configured banking strength.
+    banking_y_formula: Banking Y Function
+    banking_y_formula.description: |
+      §7This expression is used to calculate the amount of absolute pitch to apply when banking is enabled.
+      By default, this is based on the player's current pitch and roll, and the configured banking strength.
+      
+      Note: Absolute pitch in this case means the pitch that is applied as if the player's roll were zero.
+      
+      Additional variables:
+        - §f$§abanking_strength§7: The configured banking strength.
+  control_surface_efficacy:
+    .: Control Surface Efficacy Calculations
+    elevator: Elevator (Pitch)
+    elevator.description: >
+      §7This expression is used to calculate the efficacy of the elevator control surface.
+      By default, this is based on the estimated angle of attack of the control surface.
+    aileron: Aileron (Roll)
+    aileron.description: >
+      §7This expression is used to calculate the efficacy of the aileron control surface.
+      By default, this is based on the estimated angle of attack of the control surface.
+    rudder: Rudder (Yaw)
+    rudder.description: >
+      §7This expression is used to calculate the efficacy of the rudder control surface.
+      By default, this is based on the estimated angle of attack of the control surface.
+  documentation:
+    .: Documentation
+    description: |-
+      §7The expressions above use a custom expression language that allows you to use variables and functions in your calculations.
+      
+      
+      For basic mathematical operations, you can use the standard operators: §d+§7, §d-§7, §d*§7, §d/§7, and §d^§7 for exponentiation.
+      The calculation order follows PEMDAS, so you can use parentheses to group operations.
+      
+      
+      Aside from that, there are three types of named expression you can use:
+        - §f$§avariables§7: These start with a §f$§7, and hold dynamic values.
+        - §efunctions§f()§7: These are names followed by parentheses, and take arguments in the parentheses.
+        - §6CONSTANTS§7: These are names that are not variables or functions, and are replaced with a constant value.
+      
+      
+      Expand the categories below to see the available variables, functions, and constants.
+    get_help:
+      .: Get help in Discord
+      text: OPEN
+      confirm: Do you want to open this Discord invite link in your browser?
+  variables_documentation:
+    .: Variables
+    description: |-
+      §7The following variables are available:
+        - §f$§apitch§7: The player's current pitch, in degrees.
+        - §f$§ayaw§7: The player's current yaw, in degrees.
+        - §f$§aroll§7: The player's current roll, in degrees.
+        - §f$§avelocity_length§7: The player's current velocity, in blocks per tick.
+        - §f$§avelocity_x§7: The player's current velocity along the X axis, in blocks per tick.
+        - §f$§avelocity_y§7: The player's current velocity along the Y axis, in blocks per tick.
+        - §f$§avelocity_z§7: The player's current velocity along the Z axis, in blocks per tick.
+        - §f$§alook_x§7: The player's current look vector along the X axis.
+        - §f$§alook_y§7: The player's current look vector along the Y axis.
+        - §f$§alook_z§7: The player's current look vector along the Z axis.
+  functions_documentation:
+    .: Functions
+    description: |-
+      §7The following functions are available:
+        - §esqrt§f(x)§7: Returns the square root of x.
+        - §esin§f(x)§7: Returns the sine of x.
+        - §ecos§f(x)§7: Returns the cosine of x.
+        - §etan§f(x)§7: Returns the tangent of x.
+        - §easin§f(x)§7: Returns the arcsine of x.
+        - §eacos§f(x)§7: Returns the arccosine of x.
+        - §eatan§f(x)§7: Returns the arctangent of x.
+        - §eabs§f(x)§7: Returns the absolute value of x.
+        - §eciel§f(x)§7: Returns the smallest integer greater than or equal to x.
+        - §efloor§f(x)§7: Returns the largest integer less than or equal to x.
+        - §eround§f(x)§7: Returns the integer closest to x.
+        - §elog§f(x)§7: Returns the natural logarithm of x.
+        - §erandint§f(max)§7: Returns a random integer between 0 and max.
+        - §erandint§f(min, max)§7: Returns a random integer between min and max.
+        - §emin§f(x, y)§7: Returns the smaller of x and y.
+        - §emax§f(x, y)§7: Returns the larger of x and y.
+  constants_documentation:
+    .: Constants
+    description: |-
+      §7The following constants are available:
+        - §6PI§7: The value of pi.
+        - §6E§7: The value of e.
+        - §6TO_RAD§7: The conversion factor from degrees to radians.
+        - §6TO_DEG§7: The conversion factor from radians to degrees.
+      
+
+  yacl:
+    missing:
+      .: Yet Another Config Lib is not installed
+      message: YACL 3 is required to edit the config in game, would you like to install YACL 3?
+    outdated:
+      .: Yet Another Config Lib is outdated
+      message: The latest version of YACL 3 is required to edit the config in game, would you like to update YACL 3?
+
+
+category.do_a_hacked_roll.do_a_hacked_roll:
+  .: Do a Hacked Roll
+  movement: Do a Hacked Roll Movement
+key.do_a_hacked_roll:
+  toggle_enabled:
+    .: Toggle Enabled
+    enable: §aEnabled §rDo a Hacked Roll
+    disable: §cDisabled §rDo a Hacked Roll
+    disallowed: §cYou cannot disable Do a Hacked Roll on this server
+  toggle_thrust:
+    .: Toggle Thrusting
+    enable: §aEnabled §rThrusting
+    disable: §cDisabled §rThrusting
+    disallowed: §cYou cannot use thrusting on this server
+  open_config: Open Config
+
+  pitch_up: Pitch Up
+  pitch_down: Pitch Down
+  yaw_left: Yaw Left
+  yaw_right: Yaw Right
+  roll_left: Roll Left
+  roll_right: Roll Right
+  thrust_forward: Thrust Forward
+  thrust_backward: Thrust Backward
+
+
+toast.do_a_hacked_roll:
+  .: Do a Hacked Roll
+  thrusting_disabled_by_server: >-
+    §cElytra thrusting is not allowed on this server, the feature will be forcibly disabled. 
+    Disable it in your client config to remove this message.
+  mod_forced_enabled_by_server: >-
+    This mod is forcibly enabled by this server, 
+    client-side toggling and some activation behaviours will be disabled.
+  server_config_updated: >-
+    Server config updated successfully, sending new config to all players.
+  server_config_update_failed: >-
+    Failed to update server config, please check the server logs for more information.
+
+
+controlify:
+  category.do_a_hacked_roll.do_a_hacked_roll: Do a Hacked Roll
+  bind.do_a_hacked_roll:
+    pitch_up: Pitch Up
+    pitch_down: Pitch Down
+    yaw_left: Yaw Left
+    yaw_right: Yaw Right
+    roll_left: Roll Left
+    roll_right: Roll Right
+    thrust_forward: Thrust Forward
+    thrust_backward: Thrust Backward

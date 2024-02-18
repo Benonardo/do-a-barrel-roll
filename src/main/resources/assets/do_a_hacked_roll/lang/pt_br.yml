@@ -1,0 +1,69 @@
+config.do_a_hacked_roll:
+  title: §lDo a Hacked Roll
+  general:
+    .: Geral
+    mod_enabled: Mod ativado
+  controls:
+    .: Controles
+    switch_roll_and_yaw: Alternar rolagem e guinada
+    switch_roll_and_yaw.description: Mude o eixo de rotação e guinada. não recomendado, mas pode tornar o voo mais fácil para algumas pessoas.
+    momentum_based_mouse: Use a câmera baseada em impulso
+    momentum_based_mouse.description: Facilita a realização de movimentos contínuos com o mouse. Leva algum tempo para se acostumar.
+    show_momentum_widget: Mostrar widget de impulso
+    show_momentum_widget.description: Transforme a mira em um widget útil ao usar a câmera baseada em momento.
+    activation_behaviour:
+      .: Comportamento de ativação
+      description: |
+        Configura como o Elytra é ativado.
+        
+        §lVANILLA§r: O mesmo que vanilla; pular no ar.
+        §lTRIPLE_JUMP§r: Requer que você pule duas vezes no ar em vez de uma vez.
+        §lHYBRID§r: Pular uma vez no ar ativa o vôo baunilha padrão, pular novamente depois disso habilita o mod.
+        §lHYBRID_TOGGLE§r: Igual ao HYBRID, mas pular alterna o mod em vez de ativá-lo apenas uma vez.
+    invert_pitch: Inverter tom
+  banking:
+    .: opções bancárias
+    enable_banking: Ativar serviços bancários
+    enable_banking.description: A inclinação inclina levemente a câmera ao rolar, criando uma sensação mais realista e semelhante a um avião.
+    banking_strength: força bancária
+  thrust:
+    .: Opções de impulso
+    enable_thrust: Ativar impulso
+    enable_thrust.description: | 
+      Permite que você use as teclas para frente e para trás (W e S por padrão)
+      para acelerar e desacelerar infinitamente, respectivamente.
+      Este é um recurso muito enganador e pode ser usado para voar muito rápido.
+      §4É muito provável que isso sinalize antitrapaça em praticamente qualquer servidor.
+      Use por sua conta e risco.
+    max_thrust: Velocidade máxima de empuxo
+    max_thrust.description: |
+      A velocidade máxima que pode ser alcançada por impulso.
+      Definir isto para qualquer valor acima de 2-3 irá provavelmente
+      Causar problemas com pedaços que não carregam rápido o suficiente.
+    thrust_acceleration: Aceleração de impulso
+    thrust_acceleration.description: | 
+      A aceleração do impulso.
+      Valores mais altos facilitarão o alcance da velocidade máxima.
+    thrust_particles: Ativar partículas de empuxo
+  sensitivity: Sensibilidade
+  desktop:
+    .: Sensibilidade do mouse e teclado
+    pitch: Pitch
+    yaw: Yaw
+    roll: Roll
+  controller:
+    .: Sensibilidade do controlador
+    description: Aplicável apenas quando Controlify está instalado.
+    pitch: Pitch
+    yaw: Yaw
+    roll: Roll
+  yacl:
+    missing:
+      .: Yet Another Config Lib is not installed
+      message: YACL 3 is required to edit the config in game, would you like to install YACL 3?
+
+category.do_a_hacked_roll.do_a_hacked_roll: Do a Hacked Roll
+key.do_a_hacked_roll:
+  toggle_enabled: Alternar ativado
+  toggle_enabled.enable: §aHabilitado §rDo a Hacked Roll
+  toggle_enabled.disable: §cDesativado §rDo a Hacked Roll
